@@ -108,9 +108,15 @@ public class ProgramModelLinkerIntegrationTest {
         TClass surrogate = BasicFactory.eINSTANCE.createTClass();
         TClass actual = BasicFactory.eINSTANCE.createTClass();
         var dependency = BasicFactory.eINSTANCE.createTypeGraph();
-        root.getClasses().add(owner);
-        root.getClasses().add(surrogate);
-        dependency.getClasses().add(actual);
+        // Classes are contained through modules; TypeGraph.classes is only an index.
+        var module = BasicFactory.eINSTANCE.createTModule();
+        root.getModules().add(module);
+        module.getContains().add(owner);
+        module.getContains().add(surrogate);
+        var dependencyModule = BasicFactory.eINSTANCE.createTModule();
+        dependency.getModules().add(dependencyModule);
+        dependencyModule.getContains().add(actual);
+        assertSame(root, owner.eContainer().eContainer());
         owner.getParentClasses().add(surrogate);
         var linker = new ProgramModelLinker();
         assertEquals(1, linker.linkAll("tgg", root, surrogate, actual));

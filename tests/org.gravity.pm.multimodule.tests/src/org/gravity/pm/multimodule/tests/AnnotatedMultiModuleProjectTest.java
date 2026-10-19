@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.util.Comparator;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.IJavaProject;
 import org.gravity.eclipse.GravityAPI;
 import org.gravity.eclipse.importer.maven.MavenImport;
@@ -54,6 +55,7 @@ public class AnnotatedMultiModuleProjectTest {
             assertNotNull(imported.findType("study.second.Second"));
 
             final var model = GravityAPI.createProgramModel(imported, monitor);
+            awaitModelSaves();
             assertNotNull(model);
             assertNotNull(model.getClass("study.first.First"));
             assertNotNull(model.getClass("study.second.Second"));
@@ -66,11 +68,27 @@ public class AnnotatedMultiModuleProjectTest {
                     .anyMatch(location -> location.programElement() == model.getClass("study.second.Second")));
         } finally {
             if (imported != null && imported.getProject().exists()) {
+                awaitModelSaves();
                 imported.getProject().delete(true, new NullProgressMonitor());
             }
             try (var paths = Files.walk(root)) {
                 for (final Path path : paths.sorted(Comparator.reverseOrder()).toList()) {
                     Files.deleteIfExists(path);
+                }
+            }
+        }
+    }
+
+    private static void awaitModelSaves() {
+        // Conversion returns before autosave completes. Wait before modifying its
+        // EMF model or removing the workspace project backing its resources.
+        for (final Job job : Job.getJobManager().find(null)) {
+            if ("Save models".equals(job.getName())) {
+                try {
+                    job.join();
+                } catch (final InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    throw new IllegalStateException("Interrupted waiting for model saves", e);
                 }
             }
         }

@@ -15,6 +15,7 @@ import org.gravity.eclipse.tests.TestHelper;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.gravity.tgg.modisco.pm.TggProgramModelBuilder;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGActivator;
+import org.gravity.tgg.tests.ModelSaveJobGuard;
 import org.junit.After;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.modisco.java.MethodDeclaration;

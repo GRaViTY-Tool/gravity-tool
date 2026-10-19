@@ -13,6 +13,7 @@ import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
 import org.gravity.tgg.modisco.pm.MoDiscoTGGConverterFactory;
+import org.gravity.tgg.tests.ModelSaveJobGuard;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -93,6 +94,7 @@ public class LoadTests {
 			project = EclipseProjectUtil.getProjectByName(PROJECT_NAME);
 		}
 		if ((project != null) && project.exists()) {
+			ModelSaveJobGuard.awaitPendingSaves();
 			project.delete(true, null);
 		}
 	}

@@ -18,11 +18,11 @@ import org.gravity.eclipse.exceptions.TransformationFailedException;
 import org.gravity.eclipse.importer.DuplicateProjectNameException;
 import org.gravity.eclipse.tests.TestHelper;
 import org.gravity.eclipse.util.EclipseProjectUtil;
+import org.gravity.tgg.tests.ModelSaveJobGuard;
 import org.gravity.typegraph.basic.BasicFactory;
 import org.gravity.typegraph.basic.TypeGraph;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -37,35 +37,38 @@ public class APITests {
 
 	private static final Logger LOGGER = Logger.getLogger(APITests.class);
 
-	private static IJavaProject project;
+	private IJavaProject project;
 
 	/**
-	 * Generate a simple Java project for testing
+	 * Generate a fresh Java project so saved model edits cannot leak between tests.
 	 *
 	 * @throws DuplicateProjectNameException
 	 * @throws CoreException
 	 */
-	@BeforeClass
-	public static void createProject() throws DuplicateProjectNameException, CoreException {
+	@Before
+	public void createProject() throws DuplicateProjectNameException, CoreException {
 		clean();
 		project = TestHelper.generateSimpleProject(PROJECT_NAME);
 	}
 
 	@Test
 	public void testCreateProgramModel() throws TransformationFailedException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, null);
+		final var pm = GravityAPI.createProgramModel(this.project, null);
+		ModelSaveJobGuard.awaitPendingSaves();
 
 		assertNotNull(pm);
 	}
 
 	@Test
 	public void testCreateProgramModelAfterPMChange() throws TransformationFailedException, IOException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
+		final var pm = GravityAPI.createProgramModel(this.project, true, null);
+		ModelSaveJobGuard.awaitPendingSaves();
 		assertNotNull(pm);
 
 		this.addInterface(pm);
 
-		final var newPm = GravityAPI.createProgramModel(APITests.project, true, null);
+		final var newPm = GravityAPI.createProgramModel(this.project, true, null);
+		ModelSaveJobGuard.awaitPendingSaves();
 		assertNotNull(newPm);
 		assertNotEquals(pm, newPm);
 		assertTrue(newPm.getInterfaces().isEmpty());
@@ -74,11 +77,12 @@ public class APITests {
 	@Test
 	public void testCreateProgramModelAfterSrcChange()
 			throws TransformationFailedException, IOException, CoreException {
-		final var pm = GravityAPI.createProgramModel(APITests.project, true, null);
+		final var pm = GravityAPI.createProgramModel(this.project, true, null);
+		ModelSaveJobGuard.awaitPendingSaves();
 		assertNotNull(pm);
 
 		// Change project src
-		final var file = APITests.project.getProject().getFile("src/dummy/Other.java");
+		final var file = this.project.getProject().getFile("src/dummy/Other.java");
 		final var content = """
 				package dummy;
 				public class Other {
@@ -86,7 +90,8 @@ public class APITests {
 		try (var stream = new ByteArrayInputStream(content.getBytes())) {
 			file.create(stream, true, null);
 
-			final var newPm = GravityAPI.createProgramModel(APITests.project, null);
+			final var newPm = GravityAPI.createProgramModel(this.project, null);
+			ModelSaveJobGuard.awaitPendingSaves();
 			assertNotNull(newPm);
 			assertNotEquals(pm, newPm);
 			assertNotNull(newPm.getClass("dummy.Other"));
@@ -100,8 +105,8 @@ public class APITests {
 	 *
 	 * @throws CoreException
 	 */
-	@AfterClass
-	public static void clean() throws CoreException {
+	@After
+	public void clean() throws CoreException {
 		IProject delete;
 		if (project == null) {
 			delete = EclipseProjectUtil.getProjectByName(PROJECT_NAME);
@@ -109,12 +114,7 @@ public class APITests {
 			delete = project.getProject();
 		}
 		if ((delete != null) && delete.exists()) {
-			try {
-				ModelSaveJobGuard.awaitPendingSaves();
-			} catch (final InterruptedException e) {
-				Thread.currentThread().interrupt();
-				throw new IllegalStateException("Interrupted waiting for model saves", e);
-			}
+			ModelSaveJobGuard.awaitPendingSaves();
 			delete.delete(true, null);
 		}
 	}
@@ -138,7 +138,7 @@ public class APITests {
 			LOGGER.warn(e);
 			LOGGER.warn("Manually deleting file and retrying");
 			try {
-				EclipseProjectUtil.getGravityFolder(APITests.project.getProject(), null).getFile("pm/pm.xmi")
+				EclipseProjectUtil.getGravityFolder(this.project.getProject(), null).getFile("pm/pm.xmi")
 						.delete(true, null);
 			} catch (CoreException | IOException e1) {
 				fail("Unable to delete pm.xmi: " + e.getLocalizedMessage());
